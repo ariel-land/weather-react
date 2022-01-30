@@ -1,51 +1,4 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.App body {
-  font-family: "Urbanist", sans-serif;
-  color: white;
-}
-
-.App .container {
-  margin: 30px auto;
-  width: 75%;
-  border: 2px solid white;
-  padding: 12px;
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(163, 175, 243) 0%,
-    rgb(220, 182, 232) 100.2%
-  );
-}
-
-.App .card {
+.Weather {
   border: 0;
   background: radial-gradient(
     circle at 10% 20%,
@@ -54,19 +7,19 @@
   );
 }
 
-.App .cityCurrent {
+.Weather .cityCurrent {
   line-height: 40px;
   padding-left: 20px;
   font-size: 40px;
   font-weight: bolder;
 }
 
-.App .current-button {
+.Weather .current-button {
   font-size: 25px;
   margin-left: -60px;
 }
 
-.App input#search-text-input {
+.Weather input#search-text-input {
   border: 0;
   border-bottom: solid 1px;
   padding: 0.6em 1.2em;
@@ -76,7 +29,7 @@
   max-width: 90%;
 }
 
-.App button.search-button {
+.Weather button.search-button {
   background-color: rgb(211, 220, 230);
   border: 0;
   border-radius: 3em;
@@ -85,7 +38,7 @@
   margin-left: -50px;
 }
 
-.App button.search-button:hover {
+.Weather button.search-button:hover {
   background-color: #a5b0f2;
   border: 0;
   padding: 0.45em 0.8em;
@@ -93,82 +46,64 @@
   margin-left: -50px;
 }
 
-.App .dateTime {
+.Weather .dateTime {
   font-size: 12px;
   padding-right: 0;
   padding-left: 10px;
 }
 
-.App .tempNow {
+.Weather .tempNow {
   font-size: 40px;
 }
 
-.App .divider {
+.Weather .divider {
   font-size: 12px;
   vertical-align: top;
   position: relative;
   top: 10px;
 }
 
-.App .tempUnit {
+.Weather .tempUnit {
   font-size: 12px;
   vertical-align: top;
   position: relative;
   top: 10px;
 }
 
-.App .todayIcon {
+.Weather .todayIcon {
   font-size: 55px;
   padding-left: 35px;
 }
 
-.App .todayTemp {
+.Weather .todayTemp {
   font-size: 22px;
   font-weight: bold;
   padding-top: 15px;
   padding-left: 0px;
   padding-right: 0px;
 }
-.App .divider {
+.Weather .divider {
   font-weight: lighter;
 }
 
-.App .farenheit {
+.Weather .farenheit {
   padding-top: 18px;
   font-size: 15px;
   padding-left: 0px;
 }
 
-.App .todayWeather {
+.Weather .todayWeather {
   padding-left: 30px;
   font-size: 14px;
   font-weight: bold;
 }
-.App .forecast {
+.Weather .forecast {
   padding: 5px;
   border-radius: 0%;
   text-align: center;
 }
 
-.App .weatherIcons {
+.Weather .weatherIcons {
   font-size: 25px;
   color: white;
-}
-
-.App .weekForecast {
-  background-color: #513e8e;
-  margin: 5px 10px;
-}
-
-.App .weeklyTemp {
-  font-size: 12px;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
