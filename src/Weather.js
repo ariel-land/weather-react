@@ -46,13 +46,9 @@ export default function Weather() {
 
           <div className="col-3 todayTemp">
             <span className="tempNow">19</span>
-            <a href="#" className="tempUnit">
-              °C
-            </a>
+            °C
             <span className="divider">|</span>
-            <a href="#" className="tempUnit">
-              °F{" "}
-            </a>
+            °F
           </div>
           <div className="col-5"></div>
         </div>
