@@ -47,6 +47,11 @@ function App() {
           </div>
         </div>
       </div>
+      <p class="footer">
+        <a href="https://github.com/ariel-land/weather-react">
+          Open-source code by Ariel Lee{" "}
+        </a>{" "}
+      </p>
     </div>
   );
 }
