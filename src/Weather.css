@@ -157,12 +157,12 @@ p {
   margin: 0px auto;
   margin-top: 10px;
   background-clip: content-box;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid rgba(256, 256, 256, 0.9);
   animation: bigger 2s ease-in-out infinite;
 }
 
-@keyframes bigger {
+/*@keyframes bigger {
   0% {
     padding: 5px;
   }
@@ -172,7 +172,7 @@ p {
   100% {
     padding: 5px;
   }
-}
+}*/
 
 .icon-today {
   position: relative;
