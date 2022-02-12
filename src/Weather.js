@@ -157,8 +157,13 @@ export default function Weather(props) {
                     </div>
                   </div>
                   <footer>
-                    Open-source code by Ariel Lee{" "}
-                    <a href="https://github.com/ariel-land/weather-react"></a>{" "}
+                    <a
+                      href="https://github.com/ariel-land/weather-react"
+                      rel="noopener noreferrer"
+                    >
+                      Open-source code
+                    </a>{" "}
+                    by Ariel Lee{" "}
                   </footer>
                 </div>
               </div>
