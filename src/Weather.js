@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import FormattedDate from "./FormattedDate";
+
+import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
-
+  const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
     //console.log(response.data);
     setWeatherData({
@@ -20,6 +21,21 @@ export default function Weather(props) {
     });
   }
 
+  function search() {
+    const apiKey = "1b8c2d52c29dd3447556ac28355ce164";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search(city);
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
@@ -27,12 +43,13 @@ export default function Weather(props) {
           <div className="app-wrapper">
             <div className="weather app">
               <i className="far fa-compass locator" id="currentLocation"></i>
-              <form id="search-city-form">
+              <form onSubmit={handleSubmit} id="search-city-form">
                 <input
                   type="search"
                   id="input-city"
                   placeholder=" "
                   className="shadow-sm"
+                  onChange={handleCityChange}
                 />
                 <input
                   type="submit"
@@ -41,48 +58,8 @@ export default function Weather(props) {
                   className="shadow-sm"
                 />
               </form>
-              <h1 className="h1-shadow" id="currentCity">
-                {weatherData.city}
-              </h1>
-              <h2 id="dateTime">
-                <FormattedDate date={weatherData.date} />
-              </h2>
-              <div className="circle-wrapper">
-                <div className="row">
-                  <div className="col-12">
-                    <div className="today-wrapper">
-                      <div className="temp-circle-today shadow-sm"></div>
-                      <div className="row">
-                        <div className="col-12 text-center">
-                          <img
-                            className="icon-today mx-auto"
-                            id="iconToday"
-                            alt={weatherData.description}
-                            src={weatherData.iconUrl}
-                          ></img>
-                        </div>
-                        <div className="col-11">
-                          <h3 className="temp-celsius-today" id="tempToday">
-                            {Math.round(weatherData.temperature)}
-                          </h3>
-                        </div>
-                        <div className="celsius-fahrenheit">°C | °F</div>
-                        <div className="col-12">
-                          <h4 className="today-condition" id="todayCondition">
-                            {weatherData.description}
-                          </h4>
-                        </div>
-                        <div className="humidity col-12" id="humidityElement">
-                          Humidity: {weatherData.humidity}%
-                        </div>
-                        <div className="wind col-12" id="windElement">
-                          Wind: {weatherData.wind}km/hr
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <WeatherInfo info={weatherData} />
+
               <div className="weather-forecast" id="forecast">
                 <div className="row forecast">
                   <div className="col-2 forecastDay">
@@ -195,10 +172,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    const apiKey = "1b8c2d52c29dd3447556ac28355ce164";
-    let city = "Tokyo";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+    search();
     return "Loading...";
   }
 }
