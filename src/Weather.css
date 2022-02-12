@@ -1,17 +1,17 @@
 #currentCity {
-  color: #857949;
+  color: #fec2da;
 }
 
 body {
-  background-color: #ffeee9;
+  background-color: #f4e9ff;
 }
 
 .h1-shadow {
   font-family: "DM Serif Display", serif;
-  background: #827e47;
-  background: -webkit-linear-gradient(top, #827e47, #82714f);
-  background: -moz-linear-gradient(top, #827e47, #82714f);
-  background: linear-gradient(to bottom, #827e47, #82714f);
+  background: #c695dd;
+  background: -webkit-linear-gradient(top, #c695dd, #ac6ebb);
+  background: -moz-linear-gradient(top, #c695dd, #ac6ebb);
+  background: linear-gradient(to bottom, #c695dd, #ac6ebb);
   background-clip: text;
   color: transparent;
   -webkit-background-clip: text;
@@ -25,6 +25,7 @@ body {
 h2 {
   font-size: 12px;
   position: relative;
+  color: white;
   top: -30px;
   font-family: "Open Sans", sans-serif;
   text-align: center;
@@ -39,7 +40,7 @@ h4 {
 }
 
 p {
-  color: #ff9e93;
+  color: #d493ff;
   margin: 0px auto;
   padding: 0px auto;
   pointer-events: none;
@@ -53,10 +54,10 @@ p {
   margin-bottom: 10px;
   border: none;
   border-radius: 15px;
-  background: #fbddd7;
-  background: -webkit-linear-gradient(top, #fbddd7, #fad2cb);
-  background: -moz-linear-gradient(top, #fbddd7, #fad2cb);
-  background: linear-gradient(to bottom, #fbddd7, #fad2cb);
+  background: #bfc9ffee;
+  background: -webkit-linear-gradient(top, #bfc9ffee, #a3a5cd);
+  background: -moz-linear-gradient(top, #bfc9ffee, #a3a5cd);
+  background: linear-gradient(to bottom, #bfc9ffee, #a3a5cd);
   overflow: hidden;
 }
 
@@ -68,7 +69,7 @@ p {
   position: relative;
   top: 49px;
   left: 9px;
-  color: #fd9d98;
+  color: #a691c5;
   transition: all 200ms ease-in-out;
   cursor: pointer;
   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
@@ -76,11 +77,11 @@ p {
 
 .locator:hover {
   color: #fff;
-  text-shadow: -1px 0 #fd9d98, 0 1px #fd9d98, 1px 0 #fd9d98, 0 -1px #fd9d98;
+  text-shadow: -1px 0 #e598fd, 0 1px #e598fd, 1px 0 #e598fd, 0 -1px #e598fd;
 }
 
 .locator:active {
-  color: #ff9e93;
+  color: #a691c5;
 }
 
 #input-city {
@@ -94,7 +95,7 @@ p {
   padding-left: 10px;
   background: white;
   border: 1px solid white;
-  color: #d88787;
+  color: #a691c5;
   font-family: "Open Sans", sans-serif;
   transition: all 300ms ease;
 }
@@ -120,7 +121,7 @@ p {
 
 #submit-city:hover {
   background: white;
-  color: #d88787;
+  color: #a691c5;
 }
 
 ::placeholder {
@@ -130,28 +131,28 @@ p {
 }
 
 .temp-circle-today {
-  background: rgba(255, 39, 62, 0.4);
+  background: rgba(90, 19, 122, 0.4);
   background: -webkit-linear-gradient(
     top left,
-    rgba(255, 39, 62, 0.4),
-    rgba(251, 215, 208, 1)
+    rgba(90, 19, 122, 0.4),
+    rgb(237, 208, 251)
   );
   background: -moz-linear-gradient(
     top left,
-    rgba(255, 39, 62, 0.4),
-    rgba(251, 215, 208, 1)
+    rgba(90, 19, 122, 0.4),
+    rgb(237, 208, 251)
   );
   background: linear-gradient(
     to bottom right,
-    rgba(255, 39, 62, 0.4),
-    rgba(251, 215, 208, 1)
+    rgba(90, 19, 122, 0.4),
+    rgb(237, 208, 251)
   );
   border-radius: 50%;
   border: none;
-  height: 160px;
-  width: 160px;
+  height: 170px;
+  width: 170px;
   position: relative;
-  top: -30px;
+  top: -35px;
   display: block;
   text-align: center;
   margin: 0px auto;
@@ -176,8 +177,8 @@ p {
 
 .icon-today {
   position: relative;
-  bottom: 163px;
-  left: 45px;
+  top: -170px;
+  right: -175px;
   color: #fff5f4;
   width: 15%;
 }
@@ -185,8 +186,8 @@ p {
 .temp-celsius-today {
   font-size: 60px;
   position: relative;
-  bottom: 218px;
-  left: 5px;
+  bottom: 225px;
+  left: -5px;
   text-align: center;
   color: #ffefee;
   font-family: "Open Sans", sans-serif;
@@ -201,7 +202,7 @@ p {
   padding: 0;
   position: relative;
   bottom: 246px;
-  left: 200px;
+  left: 190px;
   color: #ffefee;
   font-family: "Open Sans", sans-serif;
 }
@@ -214,13 +215,13 @@ p {
 }
 
 .celsius-fahrenheit a:hover {
-  color: #827e47;
+  color: #fec2da;
   font-weight: bold;
 }
 
 .today-condition {
   position: relative;
-  bottom: 240px;
+  bottom: 245px;
   font-size: 14px;
   margin: 0;
   text-transform: capitalize;
@@ -230,7 +231,7 @@ p {
 
 .humidity {
   position: relative;
-  bottom: 238px;
+  bottom: 243px;
   color: #ffefee;
   font-family: "Open Sans", sans-serif;
   font-size: 11px;
@@ -239,7 +240,7 @@ p {
 
 .wind {
   position: relative;
-  bottom: 238px;
+  bottom: 247px;
   color: #ffefee;
   font-family: "Open Sans", sans-serif;
   font-size: 11px;
@@ -248,7 +249,7 @@ p {
 
 .forecast {
   position: relative;
-  bottom: 200px;
+  bottom: 215px;
   text-align: center;
   display: flex;
   justify-content: space-evenly;
@@ -259,21 +260,21 @@ p {
 }
 
 .forecastDay {
-  background: rgba(255, 238, 233, 1);
+  background: rgb(246, 233, 255);
   background: -webkit-linear-gradient(
     top,
-    rgba(255, 238, 233, 1),
-    rgba(251, 221, 215, 0.8)
+    rgb(246, 233, 255),
+    rgba(215, 225, 251, 0.8)
   );
   background: -moz-linear-gradient(
     top,
-    rgba(255, 238, 233, 1),
-    rgba(251, 221, 215, 0.8)
+    rgb(246, 233, 255),
+    rgba(215, 225, 251, 0.8)
   );
   background: linear-gradient(
     to bottom,
-    rgba(255, 238, 233, 1),
-    rgba(251, 221, 215, 0.8)
+    rgb(246, 233, 255),
+    rgba(215, 225, 251, 0.8)
   );
   border-radius: 10px;
   border: none;
@@ -288,7 +289,8 @@ footer {
   font-size: 10px;
   position: relative;
   bottom: -15px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(221, 198, 247, 0.5);
+  color: white;
   border-radius: 10px;
   width: 240px;
   height: auto;
@@ -298,7 +300,7 @@ footer {
 .link {
   outline: none;
   text-decoration: none;
-  color: #827e47;
+  color: #fec2da;
   transition: ease-in 200ms all;
   cursor: pointer;
   pointer-events: all;

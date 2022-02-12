@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./Weather.css";
@@ -7,8 +6,8 @@ import "./Weather.css";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+
   function handleResponse(response) {
-    //console.log(response.data);
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
@@ -16,24 +15,24 @@ export default function Weather(props) {
       city: response.data.name,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      iconUrl: "http://openweathermap.org/img/wn/04n@2x.png",
+      icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
     });
   }
 
-  function search() {
-    const apiKey = "1b8c2d52c29dd3447556ac28355ce164";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
-  }
-
   function handleSubmit(event) {
     event.preventDefault();
-    search(city);
+    search();
   }
 
   function handleCityChange(event) {
     setCity(event.target.value);
+  }
+
+  function search() {
+    const apiKey = "2ece6a19f73aa87559a80d60d1245843";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
   }
 
   if (weatherData.ready) {
@@ -58,7 +57,7 @@ export default function Weather(props) {
                   className="shadow-sm"
                 />
               </form>
-              <WeatherInfo info={weatherData} />
+              <WeatherInfo data={weatherData} />
 
               <div className="weather-forecast" id="forecast">
                 <div className="row forecast">
