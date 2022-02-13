@@ -15,9 +15,16 @@ export default function WeatherForecast(props) {
     return (
       <div className="weather-forecast" id="forecast">
         <div className="row forecast">
-          <div className="col-2 forecastDay">
-            <WeatherForecastDay data={forecast[0]} />
-          </div>
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 5) {
+              return (
+                <div className="col-2 forecastDay" key={index}>
+                  <WeatherForecastDay data={dailyForecast} />
+                </div>
+              );
+            }
+          })}
+
           <footer>
             <a
               href="https://github.com/ariel-land/weather-react"
