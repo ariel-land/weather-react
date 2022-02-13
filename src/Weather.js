@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 import "./Weather.css";
 
@@ -10,6 +11,7 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       city: response.data.name,
@@ -58,115 +60,7 @@ export default function Weather(props) {
                 />
               </form>
               <WeatherInfo data={weatherData} />
-
-              <div className="weather-forecast" id="forecast">
-                <div className="row forecast">
-                  <div className="col-2 forecastDay">
-                    <div className="weather-forecast-date">Tue</div>
-                    <img
-                      src="http://openweathermap.org/img/wn/03d@2x.png"
-                      alt="temp icon"
-                      width="42"
-                    ></img>
-                    <div
-                      className="weather-forecast-tempereatures"
-                      id="foreast-temp"
-                    >
-                      <span className="weather-foredast-temperature-max">
-                        13°
-                      </span>
-                      <span className="weather-forecast-temperature-min">
-                        10°
-                      </span>
-                    </div>
-                  </div>
-                  <div className="col-2 forecastDay">
-                    <div className="weather-forecast-date">Wed</div>
-                    <img
-                      src="http://openweathermap.org/img/wn/03d@2x.png"
-                      alt="temp icon"
-                      width="42"
-                    ></img>
-                    <div
-                      className="weather-forecast-tempereatures"
-                      id="foreast-temp"
-                    >
-                      <span className="weather-foredast-temperature-max">
-                        14°
-                      </span>
-                      <span className="weather-forecast-temperature-min">
-                        11°
-                      </span>
-                    </div>
-                  </div>
-                  <div className="col-2 forecastDay">
-                    <div className="weather-forecast-date">Thu</div>
-                    <img
-                      src="http://openweathermap.org/img/wn/03d@2x.png"
-                      alt="temp icon"
-                      width="42"
-                    ></img>
-                    <div
-                      className="weather-forecast-tempereatures"
-                      id="foreast-temp"
-                    >
-                      <span className="weather-foredast-temperature-max">
-                        15°
-                      </span>
-                      <span className="weather-forecast-temperature-min">
-                        12°
-                      </span>
-                    </div>
-                  </div>
-                  <div className="col-2 forecastDay">
-                    <div className="weather-forecast-date">Fri</div>
-                    <img
-                      src="http://openweathermap.org/img/wn/03d@2x.png"
-                      alt="temp icon"
-                      width="42"
-                    ></img>
-                    <div
-                      className="weather-forecast-tempereatures"
-                      id="foreast-temp"
-                    >
-                      <span className="weather-foredast-temperature-max">
-                        14°
-                      </span>
-                      <span className="weather-forecast-temperature-min">
-                        11°
-                      </span>
-                    </div>
-                  </div>
-                  <div className="col-2 forecastDay">
-                    <div className="weather-forecast-date">Sat</div>
-                    <img
-                      src="http://openweathermap.org/img/wn/03d@2x.png"
-                      alt="temp icon"
-                      width="42"
-                    ></img>
-                    <div
-                      className="weather-forecast-tempereatures"
-                      id="foreast-temp"
-                    >
-                      <span className="weather-foredast-temperature-max">
-                        13°
-                      </span>
-                      <span className="weather-forecast-temperature-min">
-                        10°
-                      </span>
-                    </div>
-                  </div>
-                  <footer>
-                    <a
-                      href="https://github.com/ariel-land/weather-react"
-                      rel="noopener noreferrer"
-                    >
-                      Open-source code
-                    </a>{" "}
-                    by Ariel Lee{" "}
-                  </footer>
-                </div>
-              </div>
+              <WeatherForecast coordinates={weatherData.coordinates} />
             </div>
           </div>
         </div>
