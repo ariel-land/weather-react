@@ -44,7 +44,6 @@ export default function Weather(props) {
         <div className="container shadow">
           <div className="app-wrapper">
             <div className="weather app">
-              <i className="far fa-compass locator" id="currentLocation"></i>
               <form onSubmit={handleSubmit} id="search-city-form">
                 <input
                   type="search"
